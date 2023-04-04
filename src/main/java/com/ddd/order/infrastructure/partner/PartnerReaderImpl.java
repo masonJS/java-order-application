@@ -3,7 +3,6 @@ package com.ddd.order.infrastructure.partner;
 
 import com.ddd.order.domain.partner.Partner;
 import com.ddd.order.domain.partner.PartnerReader;
-import com.ddd.order.infrastructure.partner.PartnerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -18,6 +17,6 @@ public class PartnerReaderImpl implements PartnerReader {
     public Partner getPartner(String partnerToken) {
         return partnerRepository
                 .findByPartnerToken(partnerToken)
-                .orElseThrow(() -> new RuntimeException());
+                .orElseThrow(RuntimeException::new);
     }
 }

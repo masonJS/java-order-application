@@ -1,0 +1,18 @@
+server:
+  shutdown: graceful # ?? ??? ? ??? ?? ?? ?? ??? ??? ??? ?? ??
+
+spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 20s # ?? ??? ?? ??? ???? timeout ??
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    hikari: # https://jojoldu.tistory.com/296
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/order?serverTimezone=UTC&characterEncoding=UTF-8
+      username: order-svc
+      password: order-pass
+
+

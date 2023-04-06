@@ -14,11 +14,11 @@ spring:
       jdbc-url: jdbc:mysql://localhost:3306/order?serverTimezone=UTC&characterEncoding=UTF-8
       username: order-svc
       password: order-pass
-  flyway: # https://backtony.github.io/spring/2021-10-22-spring-db-1/
-    user: order-svc
-    password: order-pass
-    schemas: order
-    url: jdbc:mysql://localhost:3306/order?serverTimezone=UTC&characterEncoding=UTF-8
+#  flyway: # https://backtony.github.io/spring/2021-10-22-spring-db-1/
+#    user: order-svc
+#    password: order-pass
+#    schemas: order
+#    url: jdbc:mysql://localhost:3306/order?serverTimezone=UTC&characterEncoding=UTF-8
 
 logging:
   config: classpath:logback-local.xml

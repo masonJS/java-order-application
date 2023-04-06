@@ -1,4 +1,4 @@
-package com.ddd.order.interfaces;
+package com.ddd.order.interfaces.partner;
 
 import com.ddd.order.domain.partner.Partner;
 import com.ddd.order.domain.partner.PartnerCommand;

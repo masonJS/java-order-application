@@ -14,6 +14,7 @@ import org.apache.commons.lang3.StringUtils;
 @Getter
 @Entity
 @NoArgsConstructor
+@Table(name = "partners")
 public class Partner extends BaseEntity {
     private static final String PREFIX_PARTNER = "ptn_";
 

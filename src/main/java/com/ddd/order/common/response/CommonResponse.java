@@ -1,4 +1,33 @@
 package com.ddd.order.common.response;
 
-public class CommonResponse {
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class CommonResponse<T> {
+    private Result result;
+    private T data;
+    private String message;
+    private String errorCode;
+
+    public static <T> CommonResponse<T> success(T data, String message) {
+        return (CommonResponse<T>) CommonResponse.builder()
+                .result(Result.SUCCESS)
+                .data(data)
+                .message(message)
+                .build();
+    }
+
+    public static <T> CommonResponse<T> success(T data) {
+        return success(data, null);
+    }
+
+    public enum Result {
+        SUCCESS, FAIL
+    }
 }

@@ -1,4 +1,4 @@
-package com.ddd.order.infrastructur;
+package com.ddd.order.infrastructure;
 
 import com.ddd.order.domain.notification.NotificationService;
 import lombok.extern.slf4j.Slf4j;

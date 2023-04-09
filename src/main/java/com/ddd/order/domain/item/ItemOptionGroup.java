@@ -1,11 +1,14 @@
 package com.ddd.order.domain.item;
 
+import com.ddd.order.common.exception.InvalidParamException;
 import com.ddd.order.domain.BaseEntity;
 import com.google.common.collect.Lists;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
@@ -28,4 +31,16 @@ public class ItemOptionGroup extends BaseEntity {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "itemOptionGroup", cascade = CascadeType.PERSIST)
     private List<ItemOption> itemOptionList = Lists.newArrayList();
+
+    @Builder
+    public ItemOptionGroup(Item item, Integer ordering, String itemOptionGroupName) {
+        if (item == null) throw new InvalidParamException("empty ItemOptionGroup.item");
+        if (ordering == null) throw new InvalidParamException("empty ItemOptionGroup.ordering");
+        if (StringUtils.isBlank(itemOptionGroupName))
+            throw new InvalidParamException("empty ItemOptionGroup.itemOptionGroupName");
+
+        this.item = item;
+        this.ordering = ordering;
+        this.itemOptionGroupName = itemOptionGroupName;
+    }
 }

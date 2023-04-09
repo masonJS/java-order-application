@@ -1,5 +1,6 @@
 package com.ddd.order.domain.partner;
 
+import com.ddd.order.common.exception.InvalidParamException;
 import com.ddd.order.common.util.TokenGenerator;
 import com.ddd.order.domain.BaseEntity;
 import jakarta.persistence.*;
@@ -37,9 +38,9 @@ public class Partner extends BaseEntity {
 
     @Builder
     public Partner(String partnerName, String businessNo, String email) {
-        if(StringUtils.isEmpty(partnerName)) throw new RuntimeException("empty partnerName");
-        if(StringUtils.isEmpty(businessNo)) throw new RuntimeException("empty businessNo");
-        if(StringUtils.isEmpty(email)) throw new RuntimeException("empty email");
+        if(StringUtils.isEmpty(partnerName)) throw new InvalidParamException("empty partnerName");
+        if(StringUtils.isEmpty(businessNo)) throw new InvalidParamException("empty businessNo");
+        if(StringUtils.isEmpty(email)) throw new InvalidParamException("empty email");
 
         this.partnerToken = TokenGenerator.randomCharacterWithPrefix(PREFIX_PARTNER);
         this.partnerName = partnerName;

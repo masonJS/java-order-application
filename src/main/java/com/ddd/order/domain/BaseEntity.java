@@ -19,4 +19,6 @@ public class BaseEntity {
 
     @UpdateTimestamp
     private ZonedDateTime updatedAt;
+
+    // @CreatedDate & @LastModifiedDate 을 사용할시 application 에 @EnableJpaAuditing 추가
 }

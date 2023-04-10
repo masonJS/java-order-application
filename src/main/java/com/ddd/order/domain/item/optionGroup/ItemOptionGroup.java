@@ -1,7 +1,9 @@
-package com.ddd.order.domain.item;
+package com.ddd.order.domain.item.optionGroup;
 
 import com.ddd.order.common.exception.InvalidParamException;
 import com.ddd.order.domain.BaseEntity;
+import com.ddd.order.domain.item.Item;
+import com.ddd.order.domain.item.option.ItemOption;
 import com.google.common.collect.Lists;
 import jakarta.persistence.*;
 import lombok.Builder;

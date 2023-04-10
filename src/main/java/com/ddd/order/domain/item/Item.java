@@ -3,6 +3,7 @@ package com.ddd.order.domain.item;
 import com.ddd.order.common.exception.InvalidParamException;
 import com.ddd.order.common.util.TokenGenerator;
 import com.ddd.order.domain.BaseEntity;
+import com.ddd.order.domain.item.optionGroup.ItemOptionGroup;
 import com.google.common.collect.Lists;
 import jakarta.persistence.*;
 import lombok.Builder;
@@ -14,6 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.List;
 
 
+@Getter
 @Entity
 @NoArgsConstructor
 @Table(name = "items")

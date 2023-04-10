@@ -11,12 +11,14 @@ import org.springframework.stereotype.Service;
 public class ItemServiceImpl implements ItemService {
     private final PartnerReader partnerReader;
     private final ItemStore itemStore;
+    private final ItemOptionSeriesFactory itemOptionSeriesFactory;
 
     @Override
     public String registerItem(ItemCommand.RegisterItemRequest command, String partnerToken) {
         var partner = partnerReader.getPartner(partnerToken);
         var initItem = command.toEntity(partner.getId());
         var item = itemStore.store(initItem);
+        itemOptionSeriesFactory.store(command, item);
         return item.getItemToken();
     }
 }

@@ -1,7 +1,7 @@
 package com.ddd.order.infrastructure.item.optiongroup;
 
-import dev.practice.order.domain.item.optiongroup.ItemOptionGroup;
-import dev.practice.order.domain.item.optiongroup.ItemOptionGroupStore;
+import com.ddd.order.domain.item.optionGroup.ItemOptionGroup;
+import com.ddd.order.domain.item.optionGroup.ItemOptionGroupStore;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

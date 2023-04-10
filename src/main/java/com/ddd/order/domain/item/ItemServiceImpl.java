@@ -1,6 +1,7 @@
 package com.ddd.order.domain.item;
 
 import com.ddd.order.domain.partner.PartnerReader;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ public class ItemServiceImpl implements ItemService {
     private final ItemOptionSeriesFactory itemOptionSeriesFactory;
 
     @Override
+    @Transactional
     public String registerItem(ItemCommand.RegisterItemRequest command, String partnerToken) {
         var partner = partnerReader.getPartner(partnerToken);
         var initItem = command.toEntity(partner.getId());
